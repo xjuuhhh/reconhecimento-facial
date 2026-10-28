@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyta - Consulta de Paciente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fundo estilizado com as curvas da marca -->
+    <div class="bg-shape-top"></div>
+    <div class="bg-shape-bottom"></div>
+
+    <div class="main-container">
+        <!-- Cabeçalho / Logótipo -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <h1 class="logo-text">vyta</h1>
+            </div>
+            <p class="tagline">saúde que te acompanha</p>
+        </header>
+
+        <!-- Conteúdo Principal em Duas Colunas (Cartões) -->
+        <div class="content-grid">
+            
+            <!-- Bloco Esquerdo: Validação de Paciente -->
+            <section class="card-section">
+                <h2>Validação de Paciente</h2>
+                <form id="consulta-form">
+                    <div class="input-group">
+                        <label for="cod-medico">Código do Médico:</label>
+                        <input type="text" id="cod-medico" placeholder="Ex: MED123" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cod-paciente">Código do Paciente:</label>
+                        <input type="text" id="cod-paciente" placeholder="Ex: PAC789" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cpf-paciente">CPF do Paciente:</label>
+                        <input type="text" id="cpf-paciente" placeholder="000.000.000-00" maxlength="14" required>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Bloco Direito: Câmara do Paciente -->
+            <section class="card-section">
+                <h2>Câmara do Paciente</h2>
+                <div class="camera-container">
+                    <!-- Elemento de vídeo para a câmara real -->
+                    <video id="video-feed" autoplay playsinline></video>
+                    
+                    <!-- Aviso flutuante menor e sem fundo sólido -->
+                    <div id="camera-placeholder" class="camera-placeholder-floating">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                        <span>Câmara Desativada</span>
+                    </div>
+                </div>
+                <button type="button" id="btn-ativar-camera" class="btn-secundario">Ligar Câmara</button>
+            </section>
+
+        </div>
+
+        <!-- Botão Principal Centralizado em baixo -->
+        <div class="btn-center-container">
+            <button type="submit" form="consulta-form" class="btn-consultar">Consultar Paciente</button>
+        </div>
+
+        <div id="resultado-validacao" class="mensagem-oculta"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

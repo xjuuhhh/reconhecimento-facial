@@ -1,0 +1,262 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e6f2f2;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Formas de fundo inspiradas na imagem de referência */
+.bg-shape-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background-color: #e2e8f0;
+    z-index: 0;
+}
+
+.bg-shape-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background-color: #00838f;
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+    z-index: 0;
+}
+
+/* Contentor Principal */
+.main-container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 950px;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+.logo-icon {
+    width: 26px;
+    height: 32px;
+    background-color: #00838f;
+    border-radius: 50% 50% 20% 20%;
+    position: relative;
+}
+.logo-icon::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    width: 15px;
+    height: 18px;
+    background-color: #4dd0e1;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+.logo-icon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 15px;
+    height: 18px;
+    background-color: #4dd0e1;
+    border-radius: 50%;
+    transform: rotate(30deg);
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff7043;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Estrutura de Grid para os dois cartões */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+/* Estilo dos Cartões Individuais (Brancos com sombra suave) */
+.card-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-section h2 {
+    font-size: 1.1rem;
+    color: #005662;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 6px;
+}
+
+/* Campos do Formulário */
+.input-group {
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95srem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00838f;
+    box-shadow: 0 0 0 3px rgba(0, 131, 143, 0.15);
+}
+
+/* Secção da Câmara */
+.camera-container {
+    width: 100%;
+    height: 200px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* Aviso flutuante no centro superior da câmara (pequeno e sem fundo sólido pesado) */
+.camera-placeholder-floating {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #e0f2f1;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Botão Secundário (Ligar Câmara) */
+.btn-secundario {
+    width: 100%;
+    padding: 8px;
+    background-color: #00838f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-secundario:hover {
+    background-color: #006064;
+}
+
+/* Contentor do Botão Principal Centralizado */
+.btn-center-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botão Principal "Consultar Paciente" */
+.btn-consultar {
+    padding: 12px 40px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(255, 112, 67, 0.35);
+}
+
+.btn-consultar:hover {
+    background-color: #f4511e;
+}
+
+/* Mensagens de feedback */
+.mensagem-oculta {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.sucesso {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.erro {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
